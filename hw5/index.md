@@ -7,20 +7,22 @@ title: Homework 5 - Visualizations
 
 <iframe src="bar_chart.html" width="700" height="500"></iframe>
 
-This bar chart visualizes the total number of licenses issued by license type in the Illinois dataset. The x-axis shows the different license types, and the y-axis shows the number of licenses. I used a vertical bar chart so that comparisons between license types would be clear and intuitive. No color was applied, as the chart focuses on raw counts rather than categorical dimensions. The data was transformed using Pandas’ `value_counts()` method on the "License Type" column to aggregate the number of entries for each type.
-
+This bar chart visualizes the total number of licenses issued by license type in the Illinois dataset. I used a vertical bar chart to support easy comparison between categories. I encoded the "License Type" column on the x-axis as a nominal (categorical) variable, and the aggregated count on the y-axis as a quantitative value. I did not use color encoding, as the goal was to focus solely on quantity rather than additional dimensions. The data was transformed using Pandas’ value_counts() method on the "License Type" column to calculate totals.
 ---
 
 ## Line Chart: Licenses Over Time (Filtered by License Type)
 
 <iframe src="line_chart.html" width="700" height="500"></iframe>
 
-This interactive line chart visualizes the number of licenses issued per year, filtered by license type. A dropdown allows the user to select a license type, and the chart updates accordingly. The x-axis represents the year (derived from the “Original Issue Date”), and the y-axis shows the count of licenses issued. I used Altair’s `selection_point()` and `binding_select()` to implement the dropdown filter. The interactivity improves the clarity by allowing users to isolate trends for one license type at a time. The data was grouped using Pandas `groupby()` on both year and license type.
+This interactive line chart visualizes the number of licenses issued per year, filtered by license type. I used a line chart to show trends over time. The "Year" was encoded on the x-axis as an ordinal value, and the count of licenses was encoded on the y-axis as a quantitative variable. I also applied color encoding to the "License Type" to distinguish values, but since the dropdown filter limits it to one type at a time, only one line appears based on selection. To prepare the data, I first converted the "Original Issue Date" column to datetime format, extracted the year, and then used Pandas groupby() to aggregate counts by year and license type.
 
 ### Interactivity
 
-The dropdown interactivity enables viewers to focus on one license type at a time, which helps reduce clutter and reveal year-by-year trends more clearly. This makes the visualization more informative and user-friendly.
+For interactivity, I used Altair’s selection_point() along with a binding_select() dropdown. This allows the viewer to choose a license type from the dropdown menu, dynamically filtering the chart. This interaction simplifies the visualization and makes it easier to analyze trends for individual license types without the clutter of overlapping lines.
 
+###Overlap
+
+The dataset used for this homework is new to me and not been used by me in any previous homeworks or labworks.
 ---
 
 <p><a href="https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/licenses_fall2022.csv">The Data</a></p>
