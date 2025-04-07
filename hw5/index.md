@@ -8,6 +8,7 @@ title: Homework 5 - Visualizations
 <iframe src="bar_chart.html" width="700" height="500"></iframe>
 
 This bar chart visualizes the total number of licenses issued by license type in the Illinois dataset. I used a vertical bar chart to support easy comparison between categories. I encoded the "License Type" column on the x-axis as a nominal (categorical) variable, and the aggregated count on the y-axis as a quantitative value. I did not use color encoding, as the goal was to focus solely on quantity rather than additional dimensions. The data was transformed using Pandas’ value_counts() method on the "License Type" column to calculate totals.
+
 ---
 
 ## Line Chart: Licenses Over Time (Filtered by License Type)
